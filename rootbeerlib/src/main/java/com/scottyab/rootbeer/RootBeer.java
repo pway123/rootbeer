@@ -129,6 +129,31 @@ public class RootBeer {
     }
 
     /**
+     * Using the PackageManager, check for a list of well known apps that require root. @link {Const.knownRootAppsPackages}
+     * @return true if one of the apps it's installed
+     */
+    public List<String> checkPotentiallyDangerousApps() {
+        return checkPotentiallyDangerousApps(null);
+    }
+
+    /**
+     * Using the PackageManager, check for a list of well known apps that require root. @link {Const.knownRootAppsPackages}
+     * @param additionalDangerousApps - array of additional packagenames to search for
+     * @return list of dangerous app detected
+     */
+    public List<String> checkPotentiallyDangerousApps(String[] additionalDangerousApps) {
+
+        // Create a list of package names to iterate over from constants any others provided
+        ArrayList<String> packages = new ArrayList<>();
+        packages.addAll(Arrays.asList(Const.knownDangerousAppsPackagesCheckList));
+        if (additionalDangerousApps!=null && additionalDangerousApps.length>0){
+            packages.addAll(Arrays.asList(additionalDangerousApps));
+        }
+
+        return checkAnyPackageFromListInstalled(packages);
+    }
+
+    /**
      * Using the PackageManager, check for a list of well known root cloak apps. @link {Const.knownRootAppsPackages}
      * and checks for native library read access
      * @return true if one of the apps it's installed
@@ -247,6 +272,30 @@ public class RootBeer {
                 pm.getPackageInfo(packageName, 0);
                 QLog.e(packageName + " ROOT management app detected!");
                 result = true;
+            } catch (PackageManager.NameNotFoundException e) {
+                // Exception thrown, package is not installed into the system
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Check if any package in the list is installed
+     * @param packages - list of packages to search for
+     * @return list of packages installed that are subset of param
+     */
+    private List<String> checkAnyPackageFromListInstalled(List<String> packages){
+        List<String> result = new ArrayList<>();
+
+        PackageManager pm = mContext.getPackageManager();
+
+        for (String packageName : packages) {
+            try {
+                // Root app detected
+                pm.getPackageInfo(packageName, 0);
+                QLog.e(packageName + " ROOT management app detected!");
+                result.add(packageName);
             } catch (PackageManager.NameNotFoundException e) {
                 // Exception thrown, package is not installed into the system
             }

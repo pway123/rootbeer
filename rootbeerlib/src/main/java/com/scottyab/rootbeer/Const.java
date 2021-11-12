@@ -30,6 +30,39 @@ public final class Const {
             "com.alephzain.framaroot"
     };
 
+    /**
+     * temp list, just to check which package exist but wont fail the root check
+     */
+    public static final String[] knownDangerousAppsPackagesCheckList = {
+        "com.koushikdutta.rommanager",
+        "com.koushikdutta.rommanager.license",
+        "com.dimonvideo.luckypatcher",
+        "com.chelpus.lackypatch",
+        "com.ramdroid.appquarantine",
+        "com.ramdroid.appquarantinepro",
+        "com.android.vending.billing.InAppBillingService.COIN",
+        "com.android.vending.billing.InAppBillingService.LUCK",
+        "com.chelpus.luckypatcher",
+        "com.blackmartalpha",
+        "org.blackmart.market",
+        "com.allinone.free",
+        "com.repodroid.app",
+        "org.creeplays.hack",
+        "com.baseappfull.fwd",
+        "com.zmapp",
+        "com.dv.marketmod.installer",
+        "org.mobilism.android",
+        "com.android.wp.net.log",
+        "com.android.camera.update",
+        "cc.madkite.freedom",
+        "com.solohsu.android.edxp.manager",
+        "org.meowcat.edxposed.manager",
+        "com.xmodgame",
+        "com.cih.game_cih",
+        "com.charles.lpoqasert",
+        "catch_.me_.if_.you_.can_"
+    };
+
     public static final String[] knownDangerousAppsPackages = {
             "com.koushikdutta.rommanager",
             "com.koushikdutta.rommanager.license",
@@ -39,25 +72,25 @@ public final class Const {
             "com.ramdroid.appquarantinepro",
             "com.android.vending.billing.InAppBillingService.COIN",
             "com.android.vending.billing.InAppBillingService.LUCK",
-            "com.chelpus.luckypatcher",
-            "com.blackmartalpha",
-            "org.blackmart.market",
-            "com.allinone.free",
-            "com.repodroid.app",
-            "org.creeplays.hack",
-            "com.baseappfull.fwd",
-            "com.zmapp",
-            "com.dv.marketmod.installer",
-            "org.mobilism.android",
-            "com.android.wp.net.log",
-            "com.android.camera.update",
-            "cc.madkite.freedom",
-            "com.solohsu.android.edxp.manager",
-            "org.meowcat.edxposed.manager",
-            "com.xmodgame",
-            "com.cih.game_cih",
-            "com.charles.lpoqasert",
-            "catch_.me_.if_.you_.can_"
+            "com.chelpus.luckypatcher"
+            // "com.blackmartalpha",
+            // "org.blackmart.market",
+            // "com.allinone.free",
+            // "com.repodroid.app",
+            // "org.creeplays.hack",
+            // "com.baseappfull.fwd",
+            // "com.zmapp",
+            // "com.dv.marketmod.installer",
+            // "org.mobilism.android",
+            // "com.android.wp.net.log",
+            // "com.android.camera.update",
+            // "cc.madkite.freedom",
+            // "com.solohsu.android.edxp.manager",
+            // "org.meowcat.edxposed.manager",
+            // "com.xmodgame",
+            // "com.cih.game_cih",
+            // "com.charles.lpoqasert",
+            // "catch_.me_.if_.you_.can_"
     };
 
     public static final String[] knownRootCloakingPackages = {
