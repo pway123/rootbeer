@@ -1,4 +1,4 @@
 <manifest package="com.scottyab.rootbeer">
-  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
   <application />
 </manifest>
